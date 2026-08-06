@@ -4,6 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Sederhana</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        :root {
+            --bg: #090a0f;
+            --neon-cyan: #0ff;
+            --neon-pink: #f0f;
+            --neon-yellow: #ff0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--neon-cyan);
+            font-family: 'Share Tech Mono', monospace, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 25px 25px;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .cyber-card {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            background: rgba(9, 10, 15, 0.85);
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), inset 0 0 15px rgba(0, 255, 255, 0.1);
+            padding: 35px 30px;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Ornamen Sudut */
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 20px;
+            height: 20px;
+            border-top: 4px solid var(--neon-pink);
+            border-left: 4px solid var(--neon-pink);
+        }
+
+        .cyber-card::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 20px;
+            height: 20px;
+            border-bottom: 4px solid var(--neon-pink);
+            border-right: 4px solid var(--neon-pink);
+        }
+
+        .header {
+            border-bottom: 2px solid var(--neon-pink);
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 26px;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
+            letter-spacing: 2px;
+        }
+
+        .status {
+            font-size: 13px;
+            color: var(--neon-pink);
+            font-weight: bold;
+            animation: blink 1.5s infinite;
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+
+        .data-row {
+            display: flex;
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .label {
+            width: 130px;
+            color: #6c7a89;
+            font-weight: bold;
+        }
+
+        .value {
+            flex: 1;
+            color: #fff;
+            text-shadow: 0 0 4px var(--neon-cyan);
+        }
+
+        .glitch-bar {
+            width: 100%;
+            height: 2px;
+            background: var(--neon-cyan);
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .glitch-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 50px;
+            height: 2px;
+            background: var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+
+        .skills-title {
+            font-size: 13px;
+            color: #6c7a89;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            border: 1px solid var(--neon-yellow);
+            color: var(--neon-yellow);
+            padding: 5px 10px;
+            font-size: 13px;
+            background: rgba(255, 255, 0, 0.05);
+            transition: all 0.2s ease;
+            cursor: crosshair;
+        }
+
+        .skill-badge:hover {
+            background: var(--neon-yellow);
+            color: var(--bg);
+            box-shadow: 0 0 12px var(--neon-yellow);
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <div class="cyber-card">
